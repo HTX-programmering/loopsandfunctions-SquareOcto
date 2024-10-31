@@ -1,0 +1,125 @@
+//opgave 6.4
+String str = "Hej med dig!";
+for (int i = 0; i < 6; i++) 
+{
+  if (str.charAt(i) == ' ')
+  {
+    continue;
+  }
+  else {println(str.charAt(i));}
+}
+
+int k = 0;
+while (k < 6) 
+{
+  println(str.charAt(k));
+  k++;
+} 
+
+// opgave 6.5
+String newStr = "Dette er en sætning, som indeholder mange e'er. Men hvor mange er der?";
+int count = 0;
+for (int l = 0; l < newStr.length(); l++) 
+{
+  char e = newStr.toLowerCase().charAt(l);
+  if (e == 'e') 
+  {
+    println(e);
+    count++;
+  }
+}
+println(count);
+
+int bleh = 0;
+int count2 = 0;
+while (bleh < newStr.length()) 
+{
+  char e2 = newStr.toLowerCase().charAt(bleh);
+  if (e2 == 'e') 
+  {
+    println(e2);
+    count2++;
+  }
+  bleh++;
+}
+println(count2);
+
+
+// opgave 6.6
+String newNewStr = "I Afrika lever der mange dyr på savannen, et af dem er zebraen. Zebraen er en flok dyr.";
+int m = 0;
+while (m < newNewStr.length()) 
+{
+  char bab = newNewStr.toLowerCase().charAt(m);
+  if (bab == 'z') 
+  {
+    println("Fundet: " + m);
+  }
+  m++;
+}
+
+// opgave 6.7
+int countz = 0;
+for (int r = 0; r < newNewStr.length(); r++) 
+{
+  if (newNewStr.toLowerCase().charAt(r) == 'z') 
+  {
+    countz++;
+  }
+}
+println(countz);
+
+//opgave 6.8
+int s = 0;
+int countz2 = 0;
+while (s < newNewStr.length()) 
+{
+  char bab = newNewStr.toLowerCase().charAt(s);
+  if (bab == 'z') 
+  {
+    countz2++;
+  }
+  s++;
+}
+println(countz2);
+
+for (int c = 0; c < newNewStr.length(); c++) 
+{
+  if (newNewStr.toLowerCase().charAt(c) == 'z') 
+  {
+    println("Fundet: " + c);
+  }
+}
+
+Og nu funktioner:
+void setup() 
+{
+  size(800, 800);
+}
+
+void draw() 
+{
+  int[] Xpushers = {0, 40, 60, 40, 0, -40, -60, -40};
+  int[] Ypushers = {0, 20, 60, 100, 120, 100, 60, 20, 0};
+  int diameter = 60;
+  drawsBlueSquare(360, 360, 90);
+  for (int i = 0; i < 8; i++) 
+  {
+    drawsRedCircle(400+Xpushers[i], 340+Ypushers[i], diameter);
+  }
+}
+
+//Jeg har ikke helt gjort det som det var meningen jeg skulle, men jeg kunne ikke lige overskue hvordan man ville gøre det på den 'rigtige' måde. Men det her virker!
+
+void drawsRedCircle(int x, int y, int diameter) 
+{
+  fill(#eb1023);
+  circle(x, y, diameter);
+}
+
+void drawsBlueSquare(int x, int y, int length) 
+{
+  fill(#0703fc);
+  square(x, y, length);
+}
+
